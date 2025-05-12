@@ -9,7 +9,7 @@ def load_data_from_csv(csv_path):
     Creating train and test sets and normalizing them.
 
     :param csv_path: Path to file
-    :return X_train, X_test: Train and test sets as PyTorch tensors.
+    :return X_train, X_test, Y_train, Y_test: Train and test sets as PyTorch tensors.
     """
     try:
         Iris_df = pd.read_csv(csv_path)
@@ -40,4 +40,4 @@ def load_data_from_csv(csv_path):
     X_train = torch.tensor(X_train_np, dtype=torch.float32)
     X_test = torch.tensor(X_test_np, dtype=torch.float32)
 
-    return X_train, X_test
+    return X_train, X_test, Y_train, Y_test
